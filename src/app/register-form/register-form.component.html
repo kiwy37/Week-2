@@ -1,0 +1,103 @@
+<form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name" class="label">Name:</label>
+      <div class="input-container">
+        <input type="text" formControlName="name" id="name" required>
+        <span class="icon non-clickable"><i class="fas fa-user"></i></span>
+      </div>
+      <div *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.errors?.['required']" class="error-message">
+        Name is required.
+      </div>
+      <div *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.errors?.['minlength']" class="error-message">
+        Name must be at least 3 characters long.
+      </div>
+      <div *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.errors?.['hasNumber']" class="error-message">
+        Name must not contain numbers.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="email" class="label">Email:</label>
+      <div class="input-container">
+        <input type="email" formControlName="email" id="email" required>
+        <span class="icon non-clickable"><i class="fas fa-envelope"></i></span>
+      </div>
+      <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']" class="error-message">
+        Email is required.
+      </div>
+      <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']" class="error-message">
+        Please enter a valid email address.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="phoneNumber" class="label">Phone Number:</label>
+      <div class="input-container">
+        <input type="text" formControlName="phoneNumber" id="phoneNumber" required>
+        <span class="icon non-clickable"><i class="fas fa-phone"></i></span>
+      </div>
+      <div *ngIf="registerForm.get('phoneNumber')?.touched && registerForm.get('phoneNumber')?.errors?.['required']" class="error-message">
+        Phone Number is required.
+      </div>
+      <div *ngIf="registerForm.get('phoneNumber')?.touched && registerForm.get('phoneNumber')?.errors?.['pattern']" class="error-message">
+        Phone Number must be a number.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="password" class="label">Password:</label>
+      <div class="input-container">
+        <input [type]="passwordVisible ? 'text' : 'password'" formControlName="password" id="password" required>
+        <span class="icon toggle-password" (click)="togglePasswordVisibility()">
+          <i [ngClass]="passwordVisible ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+        </span>
+      </div>
+      <div class="password-requirements">
+        <div class="requirement" [ngClass]="{'valid': registerForm.get('password')?.value?.length >= 8, 'invalid': registerForm.get('password')?.value?.length < 8}">
+          <i class="fas" [ngClass]="registerForm.get('password')?.value?.length >= 8 ? 'fa-check-circle' : 'fa-times-circle'"></i>
+          Password must be at least 8 characters long.
+        </div>
+        <div class="requirement" [ngClass]="{'valid': hasUpperCase(registerForm.get('password')?.value), 'invalid': !hasUpperCase(registerForm.get('password')?.value)}">
+          <i class="fas" [ngClass]="hasUpperCase(registerForm.get('password')?.value) ? 'fa-check-circle' : 'fa-times-circle'"></i>
+          Password must contain at least one uppercase letter.
+        </div>
+        <div class="requirement" [ngClass]="{'valid': hasLowerCase(registerForm.get('password')?.value), 'invalid': !hasLowerCase(registerForm.get('password')?.value)}">
+          <i class="fas" [ngClass]="hasLowerCase(registerForm.get('password')?.value) ? 'fa-check-circle' : 'fa-times-circle'"></i>
+          Password must contain at least one lowercase letter.
+        </div>
+        <div class="requirement" [ngClass]="{'valid': hasNumber(registerForm.get('password')?.value), 'invalid': !hasNumber(registerForm.get('password')?.value)}">
+          <i class="fas" [ngClass]="hasNumber(registerForm.get('password')?.value) ? 'fa-check-circle' : 'fa-times-circle'"></i>
+          Password must contain at least one number.
+        </div>
+      </div>
+      <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']" class="error-message">
+        Password is required.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="confirmPassword" class="label">Confirm Password:</label>
+      <div class="input-container">
+        <input [type]="confirmPasswordVisible ? 'text' : 'password'" formControlName="confirmPassword" id="confirmPassword" required>
+        <span class="icon toggle-password" (click)="toggleConfirmPasswordVisibility()">
+          <i [ngClass]="confirmPasswordVisible ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+        </span>
+      </div>
+      <div *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.errors?.['required']" class="error-message">
+        Confirm Password is required.
+      </div>
+      <div *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.errors?.['passwordMismatch']" class="error-message">
+        Passwords must match.
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  
+    <div class="modal" *ngIf="showModal">
+      <div class="modal-content">
+        <p>{{ successMessage }}</p>
+        <button (click)="closeModal()" class="small-button">OK</button>
+      </div>
+    </div>
+  </form>
+  

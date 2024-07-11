@@ -1,0 +1,21 @@
+<div class="sidenav-container">
+  <div class="sidenav" [class.open]="isSidenavOpen">
+    <div class="sidenav-header">
+      <h2>Projects</h2>
+    </div>
+    <nav class="sidenav-nav">
+      <a routerLink="/register-form"><i class="material-icons">article</i> Form </a>
+      <a routerLink="/hangman"><i class="material-icons">man</i> Hangman </a>
+      <a href="#"><i class="material-icons">map</i> X and O </a>
+      <a href="#"><i class="material-icons">movie</i> Movies </a>
+    </nav>
+  </div>
+  <div class="main-content">
+    <button class="sidenav-toggle" (click)="toggleSidenav()">
+      <i class="material-icons">{{isSidenavOpen ? 'chevron_left' : 'chevron_right'}}</i>
+    </button>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
