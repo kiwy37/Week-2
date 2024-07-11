@@ -1,5 +1,10 @@
 # Week 2 - Angular
 
+💻 📱 **<span style="color:blue">This repository contains two Angular assignments. The first assignment is designed to be fully responsive, ensuring a seamless experience across all devices.
+</span>**
+
+
+
 ## Assignment 1: Registration Form
 
 ### Overview
@@ -18,7 +23,9 @@ In this assignment, you will create a registration form using Angular. The form 
 - The "Save" button should be disabled until all mandatory fields are filled with valid data.
 - For bonus points, use Angular's Reactive Forms.
 
----
+![image](https://github.com/user-attachments/assets/4ac22864-dfd1-48cd-8685-a2eabb071034)
+
+
 
 ## Assignment 2: Hangman
 
@@ -39,3 +46,5 @@ Your application should have the following features:
 - Use services to manage the state of the game.
 - Use directives to display the hanging man (or any other display system that you want to use for displaying the mistakes).
 - Use pipes to format the game state for display.
+
+![image](https://github.com/user-attachments/assets/dfe90997-ec37-4f4c-9891-3088f1679d23)
