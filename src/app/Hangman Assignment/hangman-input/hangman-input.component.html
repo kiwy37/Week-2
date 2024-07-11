@@ -1,0 +1,4 @@
+<div class="hangman-input">
+  <input type="text" (keyup.enter)="guessLetter(input)" maxlength="1" #input>
+  <button (click)="guessLetter(input)">Guess</button>
+</div>

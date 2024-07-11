@@ -1,0 +1,152 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 6px; 
+    background-color: #2196f3; 
+}
+
+  .game-container {
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;    
+    margin: 20px auto;
+    width: calc(300px + 40px); 
+    height: calc(300px + 40px); 
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+    @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .board button {
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    padding: 0;
+    border: none; 
+}
+
+.board button:nth-child(7), 
+.board button:nth-child(8), 
+.board button:nth-child(9) {
+    border-bottom: none;
+}
+
+.board button:nth-child(3n) {
+    border-right: none;
+}
+  
+  .line {
+    position: absolute;
+    background-color: rgb(0, 98, 255);
+    z-index: 1;
+    width: 300px;
+    border: 1px solid rgb(0, 98, 255);
+    height: 4px;
+  }
+  
+  .horizontal-1, .horizontal-2, .horizontal-3 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #000;
+  }
+  
+  .horizontal-1 {
+    top: 37%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.horizontal-2 {
+    top: calc(66.66%);
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.horizontal-3 {
+    top: calc(100%);
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.vertical-1 {
+    left: calc(33.33% - 2px);
+    top: 0;
+    height: 100%;
+    width: 4px;
+}
+
+.vertical-2 {
+    left: calc(66.66% - 2px);
+    top: 0;
+    height: 100%;
+    width: 4px;
+}
+
+.vertical-3 {
+    left: calc(100% - 4px);
+    top: 0;
+    height: 100%;
+    width: 4px;
+}
+  
+  .diagonal-1 {
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: calc(300px * 1.414); 
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: center;
+  }
+  
+  .diagonal-2 {
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: calc(300px * 1.414); 
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: center;
+  }
+  
+  .modal {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+   
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+   
+.small-button {
+    padding: 5px 10px; 
+    font-size: 12px; 
+    margin-top: 10px;
+}

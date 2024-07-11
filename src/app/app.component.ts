@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { SidenavComponent } from './sidenav/sidenav.component'; // Adjust the path as necessary
+import { SidenavComponent } from './sidenav/sidenav.component'; 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [SidenavComponent], // Import SidenavComponent here
+  imports: [SidenavComponent], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Week2_Angular';
+  title = 'Week2';
 }

@@ -1,0 +1,5 @@
+<button (click)="makeMove()" [disabled]="value" [ngClass]="{'highlight': highlight}">
+    <div *ngIf="value === 'X'" class="x"></div>
+    <div *ngIf="value === 'O'" class="o"></div>
+  </button>
+  

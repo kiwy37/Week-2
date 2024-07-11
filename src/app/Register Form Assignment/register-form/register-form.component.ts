@@ -35,6 +35,13 @@ export class RegisterFormComponent implements OnInit {
     this.showModal = true;
     this.successMessage = 'Registration successful!';
     this.registerForm.reset();
+    this.registerForm.setValue({
+      name: '',
+      email: '',
+      phoneNumber: '',
+      password: '',
+      confirmPassword: ''
+    });
   }
 
   closeModal() {

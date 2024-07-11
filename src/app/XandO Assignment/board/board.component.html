@@ -1,0 +1,13 @@
+<div class="game-container">
+    <div class="board">
+        <app-square *ngFor="let square of squares; let i = index" [value]="square" (move)="handleMove(i)" [highlight]="winningLine?.includes(i) || false"></app-square>
+        <div *ngIf="winningLine" class="line" [ngClass]="getLineClass(winningLine)"></div>
+      </div>
+      
+      <div class="modal" *ngIf="showModal">
+        <div class="modal-content">
+          <p>{{ message }}</p>
+          <button (click)="closeModal()" class="small-button">OK</button>
+        </div>
+      </div>
+  </div>

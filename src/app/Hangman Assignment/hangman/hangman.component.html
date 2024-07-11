@@ -1,0 +1,30 @@
+<div class="hangman-container">
+    <div class="hangman-left">
+      <app-hangman-drawing></app-hangman-drawing>
+    </div>
+    <div class="hangman-right">
+      <h1>Hangman Game</h1>
+      <app-hangman-display></app-hangman-display>
+      <app-hangman-input (letterGuessed)="guessLetter($event)"></app-hangman-input>
+      <div class="alphabet">
+        <span *ngFor="let letter of alphabet"
+              (click)="guessLetter(letter)"
+              [ngClass]="{
+                  'guessed correct': isCorrect(letter) && isGuessed(letter),
+                  'guessed incorrect': isIncorrect(letter),
+                  'guessed': isGuessed(letter)
+              }">
+              {{ letter }}
+        </span>
+      </div>
+      <button (click)="startNewGame()">Start New Game</button>
+    </div>
+
+    <div class="modal" *ngIf="showModal">
+      <div class="modal-content">
+        <p>{{ message }}</p>
+        <button (click)="closeModal()" class="small-button">OK</button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,5 @@
+<div>
+    <p class="display">Word: {{ hangmanService.currentWord$ | async }}</p>
+    <p class="display">Status: {{ hangmanService.gameStatus$ | async }}</p>
+    <p class="display">Attempts Left: {{ hangmanService.remainingAttempts$ | async }}</p>
+</div>

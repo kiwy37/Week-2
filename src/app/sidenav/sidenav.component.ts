@@ -10,7 +10,7 @@ import { MatListModule } from '@angular/material/list';
   standalone: true,
   imports: [MatSidenavModule, RouterModule, MatToolbarModule, MatIconModule, MatListModule],
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css'] // Corrected from 'styleUrl' to 'styleUrls'
+  styleUrls: ['./sidenav.component.css'] 
 })
 export class SidenavComponent {
   isSidenavOpen = false;

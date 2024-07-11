@@ -1,27 +1,41 @@
-# Week2Angular
+# Week 2 - Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.7.
+## Assignment 1: Registration Form
 
-## Development server
+### Overview
+In this assignment, you will create a registration form using Angular. The form should include fields for name, email, phone number, password, confirm password, and a save button. Each field should be mandatory and include specific validation rules.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Form Details
+- **Name:** Required, must be at least 3 characters long and have no numbers.
+- **Email:** Required, must be a valid email format.
+- **Phone Number:** Required, must be a number.
+- **Password:** Required, must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number.
+- **Confirm Password:** Required, must match the password field.
 
-## Code scaffolding
+### Requirements
+- Display validation error messages under each form field.
+- Use custom CSS to style the form and error messages.
+- The "Save" button should be disabled until all mandatory fields are filled with valid data.
+- For bonus points, use Angular's Reactive Forms.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## Assignment 2: Hangman
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Overview
+Your task is to create a Hangman game using Angular. The Hangman game is a classic word-guessing game where one player chooses a word, and the other player must guess the word by suggesting letters one at a time. For each incorrect guess, a part of a hanging man is drawn. The game is won if the guesser can guess the word before the hanging man is fully drawn.
 
-## Running unit tests
+### Requirements
+Your application should have the following features:
+- The game should start with a randomly chosen word from a predefined list of words.
+- The game should display the number of incorrect guesses made and the number of remaining guesses.
+- The game should display the current state of the word being guessed, with blank spaces for each letter that has not yet been guessed and the corresponding letters for each correctly guessed letter.
+- The game should allow the player to make a guess by typing a letter.
+- The game should display a message when the game is won or lost.
+- The game should allow the player to start a new game at any time.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Tips
+- Use components to display the game and handle user input.
+- Use services to manage the state of the game.
+- Use directives to display the hanging man (or any other display system that you want to use for displaying the mistakes).
+- Use pipes to format the game state for display.
