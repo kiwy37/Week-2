@@ -1,6 +1,6 @@
 # Week 2 - Angular
 
-💻 📱 **<span style="color:blue">This repository contains two Angular assignments. The first assignment is designed to be fully responsive, ensuring a seamless experience across all devices.
+💻 📱 **<span style="color:blue">This repository contains three Angular assignments. They are designed to be fully responsive, ensuring a seamless experience across all devices.
 </span>**
 
 
@@ -48,3 +48,19 @@ Your application should have the following features:
 - Use pipes to format the game state for display.
 
 ![image](https://github.com/user-attachments/assets/dfe90997-ec37-4f4c-9891-3088f1679d23)
+
+
+## Assignment 3: Tic-Tac-Toe Game
+
+### Overview and Requirements
+You must replicate a functional tic-tac-toe game using Angular:
+- The game board should consist of a 3x3 grid of squares, with each square being clickable and starting out empty.
+- The game should start with player X's turn.
+- When a player clicks on a square, it should become marked with that player's symbol (either X or O, depending on whose turn it is).
+- After a player makes a move, it should become the other player's turn.
+- If a player gets three symbols in a row (either horizontally, vertically, or diagonally), all 3 winning symbols will be highlighted, and the game should end with that player declared the winner.
+- If all squares are filled and no player has three symbols in a row, the game should end in a tie.
+- After the game ends, the players should be given the option to start a new game.
+
+![image](https://github.com/user-attachments/assets/18ccb9f4-fd61-421d-92fe-896e5681fddc)
+

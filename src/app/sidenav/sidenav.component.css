@@ -5,6 +5,9 @@
 }
  
 .sidenav {
+  height: 100%;
+  z-index: 1;
+  position: absolute;
   width: 0;
   max-width: 250px;
   background-color: white;
@@ -62,9 +65,10 @@
 }
  
 .sidenav-toggle {
+  z-index: 1;
   position: absolute;
   border: none;
-  color: #2196f3;
+  color: #000000;
   font-size: 24px;
   cursor: pointer;
   padding: 10px;
@@ -110,6 +114,11 @@
 @media (max-width: 480px) {
   .sidenav {
     position: absolute;
+    z-index: 1;
+  }
+
+  .sidenav-toggle {
+    z-index: 1;
   }
  
   .sidenav.open {

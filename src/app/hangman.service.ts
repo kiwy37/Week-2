@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class HangmanService {
-  private words = ['ANGULAR', 'COMPONENT', 'SERVICE', 'DIRECTIVE'];
+  private words = ['ANGULAR', 'COMPONENT', 'SERVICE', 'DIRECTIVE', 'MODULE', 'DISPLAY', 'KEYBOARD', 'CONSTRUCTOR'];
   private originalWord = '';
   private selectedWord = new BehaviorSubject<string>('');
   private guessedLetters = new Set<string>();

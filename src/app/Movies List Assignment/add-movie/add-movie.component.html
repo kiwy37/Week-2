@@ -1,0 +1,6 @@
+<form (ngSubmit)="addMovie()">
+  <input type="text" [(ngModel)]="newMovie.title" placeholder="Title" name="title">
+  <input type="text" [(ngModel)]="newMovie.image" placeholder="Image URL" name="image">
+  <input type="number" [(ngModel)]="newMovie.rating" placeholder="Rating" name="rating">
+  <button type="submit">Add Movie</button>
+</form>

@@ -1,24 +1,35 @@
 .hangman-input {
-    margin: 10px 0;
-  }
-  
+  margin: 10px 0;
+}
+
+.hangman-input input {
+  font-size: 1em;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.hangman-input button {
+  font-size: 1em;
+  padding: 7px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hangman-input button:hover {
+  background-color: #0784ea;
+}
+
+@media (max-width: 840px) {
   .hangman-input input {
-    font-size: 1em;
-    padding: 5px;
-    margin-right: 10px;
+      font-size: 0.9em;
+      padding: 4px;
   }
-  
+
   .hangman-input button {
-    font-size: 1em;   
-    padding: 7px;
-    background-color: #2196f3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+      font-size: 0.9em;
+      padding: 6px;
   }
-  
-  .hangman-input button:hover {
-    background-color: #0784ea;
-  }
-  
+}

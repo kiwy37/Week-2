@@ -1,6 +1,32 @@
 .hangman-drawing {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; 
   height: 400px;
+  position: relative;
+  overflow: hidden; 
+}
+
+.hangman-drawing svg {
+  height: 100%; 
+  width: auto; 
+  max-width: 100%; 
+  position: absolute; 
+  bottom: 0;
+}
+
+@media (max-width: 840px) {
+  .hangman-drawing {
+      height: 200px; 
+      align-items: center; 
+  }
+
+  .hangman-drawing svg {
+      height: auto; 
+      width: 100%; 
+      position: absolute; 
+      top: 0;
+      transform-origin: top center; 
+      transform: scale(0.5); 
+  }
 }
