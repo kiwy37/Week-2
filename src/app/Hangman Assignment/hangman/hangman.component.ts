@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HangmanService } from '../../hangman.service';
+import { HangmanService } from '../hangman-service/hangman.service';
 import { HangmanDisplayComponent } from '../hangman-display/hangman-display.component';
 import { HangmanInputComponent } from '../hangman-input/hangman-input.component';
 import { HangmanDrawingComponent } from '../hangman-drawing/hangman-drawing.component';

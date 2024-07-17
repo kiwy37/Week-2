@@ -1,0 +1,169 @@
+.container {
+  display: flex;
+  flex-direction: column; 
+  padding: 20px;
+  background-color: #f0f0f0; 
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Arial', sans-serif;
+  height: 90vh;
+  color: #333;
+  overflow-y: auto;
+}
+
+.image-container {
+  order: 1; 
+}
+
+.image-container img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  order: 2; 
+}
+
+.releaseDate {
+  color: #ffcc00;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+
+.details h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #ffcc00;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
+
+
+.details p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: #666; 
+}
+
+.blue-text {
+  color: #1e90ff;
+}
+
+.details strong {
+  font-weight: bold;
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffaa00;
+}
+
+.stars, .user-stars {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.star, .user-star {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.star {
+  color: gold;
+}
+
+.user-star {
+  color: #1e90ff; 
+}
+
+.rating-text, .user-rating-text {
+  font-size: 18px;
+  margin-left: 10px;
+  color: #333;
+}
+
+.delimiter {
+  border-top: 1px solid #333;
+  margin: 20px 0;
+}
+
+.blue-text-list {
+  display: inline;
+}
+
+.blue-text-list:not(:last-child)::after {
+  content: ' • ';
+  color: #1e90ff;
+}
+
+.star.grey, .user-star.grey {
+  color: #ccc; 
+}
+
+@media (min-width: 600px) {
+  .container {
+    flex-direction: row;
+    max-height: 600px;
+  }
+
+  .image-container {
+    flex: 1;
+  }
+
+  .details {
+    flex: 2;
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 599px) {
+  .container {
+    flex-direction: column-reverse; 
+  }
+
+  .image-container {
+    order: 2; 
+  }
+
+  .details {
+    order: 1; 
+  }
+
+  .details h1 {
+    font-size: 28px;
+  }
+
+  .details p, .releaseDate, .rating-text, .user-rating-text {
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%; 
+  }
+}

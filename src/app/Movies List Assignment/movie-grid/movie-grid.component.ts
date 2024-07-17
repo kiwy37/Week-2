@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MovieService } from '../../movie-rating/movie.service';
+import { MovieService } from '../movie-service/movie.service';
 import { Movie } from '../movie.model';
 import { RatingPopupComponent } from '../rating-popup/rating-popup.component';
 import { MovieItemComponent } from '../movie-item/movie-item.component';
 import { Router } from '@angular/router';
-
+ 
 @Component({
   selector: 'app-movie-grid',
   standalone: true,
@@ -13,52 +13,65 @@ import { Router } from '@angular/router';
   templateUrl: './movie-grid.component.html',
   styleUrls: ['./movie-grid.component.css']
 })
-export class MovieGridComponent implements OnInit {
+export class MovieGridComponent implements OnInit, AfterViewInit {
   movies: Movie[] = [];
   selectedMovie: Movie | null = null;
-  selectedMovieId: number | null = null;
-  userRatings: { [movieId: number]: number } = {};
-
-  constructor(private movieService: MovieService, private router:Router) {}
-
+  @ViewChild('movieGrid') movieGrid!: ElementRef<HTMLDivElement>;
+  elementWidth: number = 0;
+ 
+  constructor(private movieService: MovieService, private router: Router) {}
+ 
   ngOnInit() {
     this.movies = this.movieService.getMovies();
   }
-
+ 
+  ngAfterViewInit() {
+    this.calculateElementWidth();
+  }
+ 
+  calculateElementWidth() {
+    const firstElement = this.movieGrid.nativeElement.querySelector('app-movie-item');
+    if (firstElement) {
+      this.elementWidth = firstElement.clientWidth + 20; // 20 este valoarea gap-ului dintre elemente
+    }
+  }
+ 
   openRatingPopup(movie: Movie) {
     this.selectedMovie = movie;
-    this.selectedMovieId = movie.id;
   }
-
+ 
   closeRatingPopup() {
     this.selectedMovie = null;
-    this.selectedMovieId = null;
   }
-
+ 
   submitRating(rating: number) {
     if (rating !== -1 && this.selectedMovie) {
-      this.movieService.rateMovie(this.selectedMovie.id, rating);
-      this.userRatings[this.selectedMovie.id] = rating;
-      this.movies = this.movieService.getMovies(); 
+      this.movieService.setMyRating(this.selectedMovie.id, rating);
+      this.movies = this.movieService.getMovies();
     }
     this.closeRatingPopup();
   }
-
+ 
   scrollLeft() {
-    const grid = document.querySelector('.movie-grid');
+    const grid = this.movieGrid.nativeElement;
     if (grid) {
-      grid.scrollBy({ left: -200, behavior: 'smooth' });
+      grid.scrollBy({ left: -this.elementWidth, behavior: 'smooth' });
     }
   }
-
+ 
   scrollRight() {
-    const grid = document.querySelector('.movie-grid');
+    const grid = this.movieGrid.nativeElement;
     if (grid) {
-      grid.scrollBy({ left: 200, behavior: 'smooth' });
+      grid.scrollBy({ left: this.elementWidth, behavior: 'smooth' });
     }
   }
-
+ 
   navigateToAddMovie() {
     this.router.navigate(['/add-movie']);
+  }
+ 
+  deleteMovie(id: number) {
+    this.movieService.deleteMovie(id);
+    this.movies = this.movieService.getMovies();
   }
 }

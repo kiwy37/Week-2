@@ -1,10 +1,11 @@
 <div class="movie-grid-container">
-  <div class="movie-grid">
-    <app-movie-item *ngFor="let movie of movies" [movie]="movie" [userRating]="userRatings[movie.id]" (rate)="openRatingPopup(movie)"></app-movie-item>
-  </div>
-  <button class="add-movie-button" (click)="navigateToAddMovie()">Add a Movie</button>
   <button class="arrow left" (click)="scrollLeft()">&#10094;</button>
+  <div class="movie-grid" #movieGrid>
+    <app-movie-item *ngFor="let movie of movies" [movie]="movie" [userRating]="movie.myRating" (rate)="openRatingPopup(movie)" (delete)="deleteMovie(movie.id)"></app-movie-item>
+  </div>
   <button class="arrow right" (click)="scrollRight()">&#10095;</button>
+  <div class="button-container">
+  <button class="add-movie-button" (click)="navigateToAddMovie()">Add a Movie</button>
+  </div> 
 </div>
-
 <app-rating-popup *ngIf="selectedMovie" [movie]="selectedMovie" (ratingSubmitted)="submitRating($event)"></app-rating-popup>

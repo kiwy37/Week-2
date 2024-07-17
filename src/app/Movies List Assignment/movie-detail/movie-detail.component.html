@@ -1,1 +1,46 @@
-<p>movie-detail works!</p>
+<div *ngIf="movie" class="container">
+  <div class="image-container">
+    <img [src]="movie.image" alt="{{ movie.title }}">
+  </div>
+  <div class="details">
+    <h1>{{ movie.title }}</h1>
+    <p class="releaseDate"><strong>Release Date:</strong> {{ movie.releaseDate }}</p>
+    <p>{{ movie.description }}</p>
+    
+    <div class="stars">
+      <ng-container *ngFor="let star of [].constructor(Math.round(movie.rating)); let i = index">
+        <span class="star">&#9733;</span>
+      </ng-container>
+      <ng-container *ngFor="let empty of [].constructor(10 - Math.round(movie.rating)); let i = index">
+        <span class="star grey">&#9733;</span>
+      </ng-container>
+      <span class="rating-text">{{ movie.rating }}/10</span>
+    </div>
+
+    <div *ngIf="movie.myRating !== null" class="user-stars">
+      <ng-container *ngFor="let star of [].constructor(movie.myRating); let i = index">
+        <span class="user-star">&#9733;</span>
+      </ng-container>
+      <ng-container *ngFor="let empty of [].constructor(10 - movie.myRating); let i = index">
+        <span class="user-star grey">&#9733;</span>
+      </ng-container>
+      <span class="user-rating-text">{{ movie.myRating }}/10</span>
+    </div>
+    
+    <div class="delimiter"></div>
+    <p class="blue-text">
+      <strong>Creators:</strong>
+      <span *ngFor="let creator of movie.creators" class="blue-text-list">{{ creator }}</span>
+    </p>
+    <p class="blue-text">
+      <strong>Stars:</strong>
+      <span *ngFor="let star of movie.stars" class="blue-text-list">{{ star }}</span>
+    </p>
+    <p class="blue-text">
+      <strong>Genre:</strong>
+      <span *ngFor="let genre of movie.genre" class="blue-text-list">{{ genre }}</span>
+    </p>
+    <div class="delimiter"></div>
+    <button (click)="playTrailer()">Play Trailer</button>
+  </div>
+</div>

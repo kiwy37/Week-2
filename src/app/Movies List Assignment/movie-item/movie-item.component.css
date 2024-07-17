@@ -24,8 +24,12 @@ a {
   color: #333;
   text-align: left;
   margin-left: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px; 
 }
- 
+
  
  
 .movie-item p {
@@ -70,4 +74,45 @@ a {
  
 .black-star {
   color: black;
+}
+
+.blue-star {
+  color: blue;
+}
+
+.black-star {
+  color: black;
+}
+
+.yellow-star {
+  color: yellow;
+}
+
+.blue-rating {
+  color: blue;
+}
+
+.movie-item button {
+  background-color: #9f0a0a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  display: block;
+  margin: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: -webkit-fill-available;
+}
+
+.movie-item button:hover {
+  background-color: #740e0e;
+}
+
+.movie-item button:first-of-type {
+  background-color: #007bff;
+}
+
+.movie-item button:first-of-type:hover {
+  background-color: #0056b3;
 }

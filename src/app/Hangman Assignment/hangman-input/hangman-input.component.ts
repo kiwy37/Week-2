@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HangmanService } from '../../hangman.service';
+import { HangmanService } from '../hangman-service/hangman.service';
 
 @Component({
   selector: 'app-hangman-input',

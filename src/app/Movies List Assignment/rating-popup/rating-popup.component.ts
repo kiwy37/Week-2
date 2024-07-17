@@ -20,7 +20,9 @@ export class RatingPopupComponent {
   }
 
   submitRating() {
-    this.ratingSubmitted.emit(this.rating);
+    if (this.movie) {
+      this.ratingSubmitted.emit(this.rating);
+    }
     this.closePopup();
   }
 

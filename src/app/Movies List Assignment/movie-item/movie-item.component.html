@@ -3,12 +3,14 @@
   <div class="rating-container">
     <span class="rating">
       <i class="fa fa-star yellow-star"></i>
-      {{ randomRatingCount }}
+      {{ movie.averageRating }}
     </span>
     <span class="user-rating" (click)="openRatingPopup()">
-      <i class="fa fa-star blue-star" [ngClass]="{'black-star': userRating !== null}"></i>
+      <i class="fa fa-star" [ngClass]="{'blue-star': userRating !== null, 'black-star': userRating === null}"></i>
       <span *ngIf="userRating !== null" class="blue-rating">{{ userRating }}</span>
     </span>
   </div>
   <h2>{{ movie.title }}</h2>
+  <button (click)="navigateToDetails()">Details</button>
+  <button (click)="deleteMovie()">Delete</button>
 </div>

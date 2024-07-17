@@ -3,7 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 6px; 
   background-color: #2196f3; 
-  position: relative; /* Adăugăm această proprietate pentru a putea poziționa liniile absolut în cadrul tablei */
+  position: relative; 
 }
  
 .game-container {
@@ -58,31 +58,31 @@
 }
  
 .horizontal-1 {
-  top: calc(15.5%); /* Ajustăm poziția liniei pentru primul rând */
+  top: calc(15.5%); 
 }
  
 .horizontal-2 {
-  top: calc(49.5%); /* Ajustăm poziția liniei pentru al doilea rând */
+  top: calc(49.5%); 
 }
  
 .horizontal-3 {
-  top: calc(83.5%); /* Ajustăm poziția liniei pentru al treilea rând */
+  top: calc(83.5%); 
 }
  
 .vertical-1 {
-  left: calc(15.5%); /* Ajustăm poziția liniei pentru prima coloană */
+  left: calc(15.5%); 
   height: 100%;
   width: 4px;
 }
  
 .vertical-2 {
-  left: calc(49.5%); /* Ajustăm poziția liniei pentru a doua coloană */
+  left: calc(49.5%); 
   height: 100%;
   width: 4px;
 }
  
 .vertical-3 {
-  left: calc(83.5%); /* Ajustăm poziția liniei pentru a treia coloană */
+  left: calc(83.5%); 
   height: 100%;
   width: 4px;
 }

@@ -1,0 +1,10 @@
+.trailer-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  iframe {
+    border: none;
+  }
+  

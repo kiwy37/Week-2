@@ -1,7 +1,8 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Movie } from '../movie.model';
+import { MovieService } from '../movie-service/movie.service';
 
 @Component({
   selector: 'app-movie-item',
@@ -10,13 +11,25 @@ import { Movie } from '../movie.model';
   templateUrl: './movie-item.component.html',
   styleUrls: ['./movie-item.component.css']
 })
-export class MovieItemComponent {
+export class MovieItemComponent implements OnInit {
   @Input() movie!: Movie;
   @Input() userRating: number | null = null;
   @Output() rate = new EventEmitter<void>();
-  randomRatingCount: number = Math.floor(Math.random() * 1000) + 1;
+  @Output() delete = new EventEmitter<void>();
+
+  constructor(private movieService: MovieService, private router: Router) {}
+
+  ngOnInit() {}
 
   openRatingPopup() {
     this.rate.emit();
+  }
+
+  deleteMovie() {
+    this.delete.emit();
+  }
+
+  navigateToDetails() {
+    this.router.navigate(['/movie-detail', this.movie.id]);
   }
 }

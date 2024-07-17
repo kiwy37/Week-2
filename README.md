@@ -1,6 +1,6 @@
 # Week 2 - Angular
 
-💻 📱 **<span style="color:blue">This repository contains three Angular assignments. They are designed to be fully responsive, ensuring a seamless experience across all devices.
+💻 📱 **<span style="color:blue">This repository contains four Angular assignments. They are designed to be fully responsive, ensuring a seamless experience across all devices.
 </span>**
 
 
@@ -63,4 +63,23 @@ You must replicate a functional tic-tac-toe game using Angular:
 - After the game ends, the players should be given the option to start a new game.
 
 ![image](https://github.com/user-attachments/assets/18ccb9f4-fd61-421d-92fe-896e5681fddc)
+
+
+## Assignment 4: Movies/Shows List
+
+### Overview
+Create a web application (Angular only, no backend) for users that want to rate movies. The app will show you a grid of movies/shows. Each element of the grid will have some details, like a name, a picture, and a rating.
+
+### Features
+- Users can add their own movie/show directly from the UI.
+- Added movies/shows will be visible in the grid even after refreshing the page.
+- Clicking on the show’s thumbnail will redirect you to another page where you can get more information about the show.
+- Users can rate the show, and the rating will be mathematically calculated and preserved even after refreshing the page.
+- Users can only rate each show once.
+![image](https://github.com/user-attachments/assets/187fe20d-cd6a-41a5-9765-385807b110b3)
+
+### Bonus Features
+1. Clicking on the show’s thumbnail will redirect you to another page where you can get more information about the show. 
+2. You can rate the show, and your rating will be mathematically calculated. Those changes will be preserved when you refresh the page, and once you vote you cannot do it again for the same show.
+![image](https://github.com/user-attachments/assets/f3546757-5c0f-4c2e-9b18-6706518280c7)
 
